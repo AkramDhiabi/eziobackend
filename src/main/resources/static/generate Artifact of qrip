@@ -1,0 +1,2 @@
+mvn install:install-file "-Dfile=qrip-2.0.0.jar" "-DgroupId=com.gemalto.ezio" "-DartifactId=qrip-2.0.0" "-Dversion=2.0.0" "-Dpackaging=jar"
+mvn install:install-file "-Dfile=mnoqrip.jar" "-DgroupId=com.gemalto.ezio" "-DartifactId=mnoqrip" "-Dversion=1.10" "-Dpackaging=jar"
