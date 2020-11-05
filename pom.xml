@@ -206,11 +206,11 @@
 		<repository>
 			<id>ezio-proxy-repo</id>
 			<name>ezio-proxy-repo</name>
-			<url>http://35.180.61.249:8081/repository/ezio-proxy-repo/</url>
+			<url>http://35.180.156.3:8081/repository/ezio-proxy-repo/</url>
 		</repository>
 	</repositories>
 
-<!-->	<profiles>
+    <profiles>
 		<profile>
 			<id>prod</id>
 			<properties>
@@ -218,7 +218,7 @@
 				<env>prod</env>
 			</properties>
 		</profile>
-	</profiles> -->
+	</profiles>
 
 	<build>
 		<filters>

@@ -2,7 +2,8 @@ package com.gemalto.eziomobile.demo.auth.web;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
+import javax.persistence.Query;
+//import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -47,10 +48,10 @@ public class EzioMobileDemoAuthenticationProvider implements AuthenticationProvi
 		criteriaQuery.where(builder.equal(studentRoot.get("userId"),username));
 		
 		@SuppressWarnings("unchecked")
-		TypedQuery<UserMasterInfo> typed = (TypedQuery<UserMasterInfo>) entityManager.createQuery(criteriaQuery).getSingleResult();
-		UserMasterInfo user = typed.getSingleResult();
+		UserMasterInfo user = entityManager.createQuery(criteriaQuery).getSingleResult();
 		    
 		logger.info("EzioMobileDemoAuthenticationProvider [user]: "+user.toString());
+		logger.info("EzioMobileDemoAuthenticationProvider [Password]: "+user.getPassword());
 
 		String encodePassword = EncryptionUtility.convertHexToString(user.getPassword());
 		BCryptPasswordEncoder passwordEncoder= new BCryptPasswordEncoder();
